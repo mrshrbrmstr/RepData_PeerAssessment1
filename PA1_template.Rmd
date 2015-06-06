@@ -2,9 +2,7 @@
 title: "PA1_template"
 author: "Mary Rudis"
 date: "June 5, 2015"
-output: 
-  md_document:
-    variant: markdown_github
+output: html_document
 ---
 
 ## Loading and preprocessing the data  
@@ -38,7 +36,7 @@ There are 3 parts to this question:
   the histogram is approximately bell-shaped, then we can observe that the data appear  
   to be normally distributed.
 
-```{r, echo = TRUE}
+```{r question1, echo = TRUE}
 # The plyr and dplyr packages are needed to run this script
 require(plyr)
 require(dplyr)
@@ -96,7 +94,7 @@ approximately normally distributed.
   a 24-hour day.  
 2. Which 5-minute time interval from part 1 contains the maximum average number of steps?
 
-```{r, echo = TRUE}
+```{r question2, echo = TRUE}
 # Question 2: What is the average daily activity pattern?
 # To answer this question, we'll need to look at steps taken over different time intervals
 
@@ -155,7 +153,7 @@ can introduce bias into some calculations or summaries of the data.
   from the estimates from the first part of the assignment? What is the impact of inputing  
   missing data on the estimates of the total daily number of steps?
   
-```{r, echo = TRUE}
+```{r question3, echo = TRUE}
 # We will now explore the effect of replacing missing values with reasonable estimates
 # Count number of missing values and report
 nmissing <- function(x) {
@@ -226,9 +224,7 @@ print(paste("The median steps per day is ",
 Results were as follows: there were 2,304 missing observations (rows). The new data set  
 obtained from filling in average steps per time interval resulted in the following:  
 - The mean number of steps taken per day was again 10,766  
-- The median number of steps taken per day was also 10,766  
-
-The tidy data file has been output to a file named "activity_tidy.csv"  
+- The median number of steps taken per day was also 10,766   
 
 The histogram created from the completed data set shows a similar pattern except  
 there is a more dramatic central tendency. There is a significantly higher peak  
@@ -244,7 +240,7 @@ a majority of days are within roughly 1,000 steps of the mean.
   the average number of steps taken, averaged across all weekday days or weekend days.  
   This should result in 576 separate observations which will be split between two graphs.  
   
-```{r, ECHO = TRUE}
+```{r question4, ECHO = TRUE}
 # Question 4: Are there differences in activity patterns between weekdays and weekends?
 # Add a column to the tidy data set called "day.type" of data type factor that
 # contains one of two values: "weekday" and "weekend"
